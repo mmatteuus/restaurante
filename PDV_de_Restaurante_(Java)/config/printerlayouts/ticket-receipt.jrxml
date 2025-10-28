@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.0.final using JasperReports Library version 6.1.0  -->
+<!-- 2015-09-06T20:50:28 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TicketReceiptReport" pageWidth="164" pageHeight="324" whenNoDataType="BlankPage" columnWidth="148" leftMargin="8" rightMargin="8" topMargin="0" bottomMargin="14" isFloatColumnFooter="true" isIgnorePagination="true" uuid="27379c7a-a635-40f6-a0b7-3cee754b91e4">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="336"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<parameter name="checkNo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tableNo" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="guestCount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="serverName" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="reportDate" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine1" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine2" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine3" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine4" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="headerLine5" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="grandSubtotal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="grandTotal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="taxAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tipAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="netAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="currencySymbol" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="changedAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="paidAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="serviceCharge" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="discountAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="footerMessage" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="receiptType" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="showHeaderSeparator" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="terminal" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="totalText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="discountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="taxText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="serviceChargeText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="tipsText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="netAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="paidAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="changeAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="showFooter" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="showSubtotal" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="itemText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="quantityText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="subTotalText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="ticketHeader" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="deliveryChargeText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="deliveryCharge" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dueAmountText" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="dueAmount" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="additionalProperties" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="approvalCode" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="cardPayment" class="java.lang.Boolean" isForPrompting="false"/>
+	<parameter name="copyType" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="barcode" class="java.lang.String" isForPrompting="false"/>
+	<field name="itemQty" class="java.lang.String"/>
+	<field name="itemName" class="java.lang.String"/>
+	<field name="itemSubtotal" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="165" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-2" x="-30" y="-227" width="595" height="25" uuid="e7f1608c-f6ab-4a3c-9c49-268b6f1ccf34"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-3" x="-30" y="-202" width="595" height="20" uuid="b00283fc-f636-46be-8ed2-79322b7d978b"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-4" x="-30" y="-182" width="595" height="20" uuid="1e83f208-c9de-4b72-b46d-2c5453dbd29d"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" x="-30" y="-162" width="595" height="20" uuid="7a84c9cb-dcbf-48c4-8c2f-e4f6d3f4ad32"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-6" x="-30" y="-142" width="595" height="20" uuid="58c433e9-b641-43f8-a345-099f84f3cb4c"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine5}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-7" x="-30" y="-227" width="595" height="25" uuid="4a0424e6-e57b-450d-833a-2f0df9ad9525"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-8" x="-30" y="-202" width="595" height="20" uuid="15d06438-9452-4137-b2ec-22005cf5ed69"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-9" x="-30" y="-182" width="595" height="20" uuid="4b6515ed-d1a8-4ceb-8b9c-ee67f4ec1c40"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-10" x="-30" y="-162" width="595" height="20" uuid="87315933-a1f5-4b0c-b2a4-bc1471571cc2"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-11" x="-30" y="-142" width="595" height="20" uuid="09ec09f0-4895-419b-bddb-f07662c698b0"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine5}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-12" x="0" y="0" width="148" height="18" isRemoveLineWhenBlank="true" uuid="b3089305-ea1f-4345-a0b5-12704e02a58f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-13" x="0" y="18" width="148" height="14" isRemoveLineWhenBlank="true" uuid="43bb3978-6ef7-4214-8021-4f46c574d514"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-14" x="0" y="32" width="148" height="14" isRemoveLineWhenBlank="true" uuid="3c2df8cd-db45-4a71-b4df-1149bc4c8813"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine3}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-15" x="0" y="46" width="148" height="14" isRemoveLineWhenBlank="true" uuid="32af0a66-92a5-43a3-b13a-65190888c079"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine4}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-16" x="0" y="60" width="148" height="14" isRemoveLineWhenBlank="true" uuid="6eb84a48-1c44-4afc-a43a-43c741ab059e"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{headerLine5}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="0" y="99" width="148" height="1" isRemoveLineWhenBlank="true" uuid="bcefce5c-73c5-4543-9c65-660646d850fb">
+					<printWhenExpression><![CDATA[$P{showHeaderSeparator}!=null && $P{showHeaderSeparator}==true]]></printWhenExpression>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement key="line-1" positionType="Float" x="0" y="142" width="148" height="1" uuid="72fa7e4b-ec3a-43d9-a001-57f4c3ee1917"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement key="staticText-2" positionType="Float" x="0" y="145" width="72" height="15" uuid="ae23655b-cc6e-47ce-8f81-4dab09c3e5fe"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" isUnderline="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{itemText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-1" positionType="Float" x="75" y="145" width="19" height="15" uuid="5ac8507e-f676-450d-9df6-1f48daee3fa7"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{quantityText}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="staticText-4" positionType="Float" x="98" y="145" width="50" height="15" uuid="2de1e563-f76c-488d-903a-b4282289a8e6">
+					<printWhenExpression><![CDATA[$P{showSubtotal}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{subTotalText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-16" x="0" y="82" width="148" height="14" isRemoveLineWhenBlank="true" uuid="cef72a6d-c80b-4253-bcdb-b29143d7c361"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{receiptType}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement positionType="Float" x="0" y="162" width="60" height="1" uuid="0958b337-afd0-47d6-9fcc-fd4debb63e28"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="76" y="162" width="19" height="1" uuid="6c5b146d-c1a8-4fc5-bc45-c7db6a0c8ff9"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement positionType="Float" x="112" y="162" width="36" height="1" uuid="4f56586f-f856-4d0b-a992-853957a62959"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="103" width="148" height="12" isRemoveLineWhenBlank="true" uuid="138f17e7-00ea-41c7-9ebb-f535fcd71ff2"/>
+				<textElement markup="html">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ticketHeader}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="1" y="115" width="146" height="20" isRemoveLineWhenBlank="true" uuid="bc8589b2-8cce-4319-874c-11e5e3cb29cb"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{barcode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch">
+			<printWhenExpression><![CDATA[Boolean.valueOf(String.valueOf($V{PAGE_NUMBER}).equals("1"))]]></printWhenExpression>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="0" y="0" width="76" height="12" isRemoveLineWhenBlank="true" uuid="1656465a-b169-44c0-9349-b6b889f4f992"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemName}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="98" y="0" width="50" height="12" isRemoveLineWhenBlank="true" uuid="f3aa8349-a4e5-4221-863a-016fbc0a1178">
+					<printWhenExpression><![CDATA[$P{showSubtotal}==true]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemSubtotal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" x="77" y="0" width="19" height="12" uuid="cd8612c3-6674-4864-a704-8abad0d933ec"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{itemQty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band splitType="Prevent"/>
+	</lastPageFooter>
+	<summary>
+		<band height="310" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-8" x="5" y="58" width="87" height="13" uuid="24872a25-5b18-4564-862c-3a1fe4dcd3c6">
+					<printWhenExpression><![CDATA[$P{tipAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{tipsText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-5" x="5" y="6" width="87" height="13" uuid="95ce7de3-4838-4b20-be70-735845e339c2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" positionType="Float" x="0" y="298" width="148" height="12" isRemoveLineWhenBlank="true" uuid="8c02aaf4-3fcc-4868-9f82-2fa9eafbfbe5">
+					<printWhenExpression><![CDATA[$P{showFooter}==true]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{footerMessage}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-8" x="5" y="71" width="87" height="13" isRemoveLineWhenBlank="true" uuid="aae17626-5e72-4f01-978d-714f8a66c9b1">
+					<printWhenExpression><![CDATA[$P{tipAmount}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deliveryChargeText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField" isPrintRepeatedValues="false" x="98" y="71" width="50" height="13" isRemoveLineWhenBlank="true" uuid="fec50f06-32ee-4acc-bb52-f43a3056ac3f"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{deliveryCharge}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-9" x="0" y="130" width="92" height="13" isRemoveLineWhenBlank="true" uuid="0e95edba-f454-469c-ac26-4b766ed017f2">
+					<printWhenExpression><![CDATA[$P{changedAmount} != null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{changeAmountText}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" x="98" y="130" width="50" height="13" isRemoveLineWhenBlank="true" uuid="459c8e13-e7bd-42bd-9191-f0ec57ad8c6a"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{changedAmount}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-1" x="0" y="144" width="148" height="13" isRemoveLineWhenBlank="true" uuid="43b0c54e-e3af-4e3c-9e29-f9892ea3e4e1"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{additionalProperties}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-9" x="0" y="252" width="148" height="13" isRemoveLineWhenBlank="true" uuid="7174667d-38c7-41d5-aa49-f477c9cb92d0">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="html">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{approvalCode}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="214" width="148" height="36" isRemoveLineWhenBlank="true" uuid="f0d07837-c8d7-4529-ae8c-0dab2bec6a85">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<text><![CDATA[Sign:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="staticText-9" positionType="Float" x="0" y="278" width="148" height="13" isRemoveLineWhenBlank="true" uuid="e0bb3b50-5091-4371-8e00-2d5a507ea04c">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{copyType}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="157" width="148" height="26" isRemoveLineWhenBlank="true" uuid="5e692495-8efb-4ba8-8207-bab942340a48">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<text><![CDATA[Tips:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="31" y="182" width="115" height="1" isRemoveLineWhenBlank="true" uuid="ea6b2ced-e5e6-4281-9dc9-15a6993a3e73">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="183" width="148" height="31" isRemoveLineWhenBlank="true" uuid="b8b613df-f2da-4d5b-94c3-fdc768ee09c8">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font fontName="Monospaced" size="9"/>
+				</textElement>
+				<text><![CDATA[Total:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="32" y="213" width="115" height="1" isRemoveLineWhenBlank="true" uuid="2ef8bde0-c4a8-41d2-9c95-2397ad9f43c4">
+					<printWhenExpression><![CDATA[$P{cardPayment}==true]]></printWhenExpression>
+				</reportElement>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
