@@ -10,7 +10,7 @@ PDV desktop focado em operações de restaurante: mesas/comandas, pedidos, impre
 - Backoffice básico: cadastro de produtos, preços e usuários.
 - Banco: Derby (embedded) e compatibilidade com MySQL/PostgreSQL.
 
-## Arquitetura (visão rápida)
+## Arquitetura 
 - **Linguagem/UI:** Java (Swing).
 - **Persistência:** ORM/JDBC.
 - **Relatórios:** JasperReports.
